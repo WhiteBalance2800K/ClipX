@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClipX, your clipboard, finally organized</title>
+  <link rel="stylesheet" href="css/clipx.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="landing-page">
+    <header class="landing-nav">
+      <a class="brand" href="index.html" aria-label="ClipX home">
+        <span class="mark">⌘</span>
+        <span>ClipX</span>
+      </a>
+      <nav class="links" aria-label="Website sections">
+        <a href="#features">Features</a>
+        <a href="#privacy">Privacy</a>
+        <a href="#use-cases">Use cases</a>
+        <a href="#pricing">Pricing</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <span data-theme-icon data-icon="moon"></span>
+          <span data-theme-label>Dark</span>
+        </button>
+        <button class="btn primary" type="button" data-action="download"><span data-icon="arrow"></span>Download</button>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="hero">
+        <div>
+          <p class="section-kicker" style="padding:0;">Private clipboard history for macOS</p>
+          <h1 class="hero-title">Your clipboard, finally organized.</h1>
+          <p class="hero-copy">
+            ClipX keeps every copy within reach, searchable, private, and instantly available across your Mac.
+          </p>
+          <div class="hero-actions">
+            <button class="btn primary" type="button" data-action="download"><span data-icon="arrow"></span>Download for macOS</button>
+            <a class="btn secondary" href="app-main.html"><span data-icon="clipboard"></span>View demo</a>
+          </div>
+          <div class="hero-points">
+            <div class="hero-point">
+              <strong>Local</strong>
+              <span>History stays on this Mac by default.</span>
+            </div>
+            <div class="hero-point">
+              <strong>6 types</strong>
+              <span>Text, links, images, code, colors, and files.</span>
+            </div>
+            <div class="hero-point">
+              <strong>No cloud</strong>
+              <span>Sync is opt-in, never the default.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-mockup">
+          <div class="product-mockup" aria-label="ClipX app mockup">
+            <div class="mac-titlebar">
+              <span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="window-title">ClipX</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mock-side">
+                <div class="mock-pill" style="width:80%;"></div>
+                <div class="mock-pill" style="width:68%;"></div>
+                <div class="mock-pill" style="width:76%;background:var(--accent-soft);"></div>
+                <div class="mock-pill" style="width:62%;"></div>
+                <div class="mock-pill" style="width:74%;"></div>
+              </div>
+              <div class="mock-list">
+                <div class="mock-row active"></div>
+                <div class="mock-row"></div>
+                <div class="mock-row"></div>
+                <div class="mock-row"></div>
+                <div class="mock-row"></div>
+              </div>
+              <div class="mock-detail">
+                <div class="mock-line" style="width:64%;"></div>
+                <div class="mock-line" style="width:92%;"></div>
+                <div class="mock-line" style="width:78%;"></div>
+                <pre class="code-block" style="margin-top:16px;white-space:pre-wrap;">copyAgain(selectedItem)
+  .then(showToast)</pre>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card code">
+            <strong>Code</strong>
+            <pre class="code-block" style="margin-top:8px;padding:10px;">⌘⇧V → paste()</pre>
+          </div>
+          <div class="floating-card color">
+            <strong>Color copied</strong>
+            <div class="color-strip"></div>
+          </div>
+          <div class="floating-card link">
+            <strong>Research link</strong>
+            <p class="muted" style="margin:6px 0 0;">Saved from Safari, searchable by title and URL.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band" id="features">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker" style="padding:0;">Core features</p>
+            <h2>Built for people who copy hundreds of things a day.</h2>
+          </div>
+          <p>ClipX organizes clipboard history by content type, source app, recency, and intent without forcing manual filing.</p>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-row">
+            <span class="type-icon"><span data-icon="search"></span></span>
+            <div>
+              <h3>Instant search</h3>
+              <p>Find by copied text, URL title, source app, tag, color value, or file path.</p>
+            </div>
+          </article>
+          <article class="feature-row">
+            <span class="type-icon"><span data-icon="clipboard"></span></span>
+            <div>
+              <h3>Smart clipboard history</h3>
+              <p>Group text, links, images, code, colors, and files into a fast local library.</p>
+            </div>
+          </article>
+          <article class="feature-row">
+            <span class="type-icon code"><span data-icon="code"></span></span>
+            <div>
+              <h3>Code and color recognition</h3>
+              <p>Preserve syntax, indentation, HEX, RGB, HSL, and swatches for design handoff.</p>
+            </div>
+          </article>
+          <article class="feature-row">
+            <span class="type-icon"><span data-icon="lock"></span></span>
+            <div>
+              <h3>Private by design</h3>
+              <p>Local storage, sensitive app exclusions, password field detection, and auto-delete rules.</p>
+            </div>
+          </article>
+          <article class="feature-row">
+            <span class="type-icon"><span data-icon="keyboard"></span></span>
+            <div>
+              <h3>Keyboard first</h3>
+              <p>Open with Command Shift V, move with arrows, press Enter to paste into the front app.</p>
+            </div>
+          </article>
+          <article class="feature-row">
+            <span class="type-icon"><span data-icon="finder"></span></span>
+            <div>
+              <h3>Native macOS experience</h3>
+              <p>Quiet window chrome, menu bar readiness, system shortcuts, and dark or light appearance.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-band" id="privacy">
+        <div class="privacy-panel">
+          <div>
+            <p class="section-kicker" style="padding:0;">Privacy</p>
+            <h2 style="font-size:clamp(34px,4vw,56px);line-height:1.02;">Everything stays on your Mac.</h2>
+            <p class="muted" style="font-size:18px;line-height:1.6;max-width:610px;">
+              No tracking. No cloud by default. No unnecessary permissions. Clipboard content is treated as work material, credentials, and private context.
+            </p>
+          </div>
+          <div class="privacy-list">
+            <div class="privacy-item"><span class="tag mint">On</span>Local encrypted storage</div>
+            <div class="privacy-item"><span class="tag mint">On</span>Exclude sensitive apps</div>
+            <div class="privacy-item"><span class="tag mint">On</span>Ignore password fields</div>
+            <div class="privacy-item"><span class="tag amber">30d</span>Auto-delete history</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band" id="use-cases">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker" style="padding:0;">Use cases</p>
+            <h2>Different workflows, same fast recall.</h2>
+          </div>
+        </div>
+        <div class="audience-grid">
+          <article class="audience-card">
+            <span class="type-icon code"><span data-icon="code"></span></span>
+            <h3>Developers</h3>
+            <p>Recover snippets, API docs, terminal commands, and file paths without leaving the editor.</p>
+          </article>
+          <article class="audience-card">
+            <span class="type-icon color"><span data-icon="color"></span></span>
+            <h3>Designers</h3>
+            <p>Keep colors, component names, references, image crops, and Figma notes within reach.</p>
+          </article>
+          <article class="audience-card">
+            <span class="type-icon text"><span data-icon="text"></span></span>
+            <h3>Writers</h3>
+            <p>Revisit source quotes, draft lines, links, and repeated fragments without document hunting.</p>
+          </article>
+          <article class="audience-card">
+            <span class="type-icon link"><span data-icon="link"></span></span>
+            <h3>Researchers</h3>
+            <p>Collect article titles, URLs, citations, notes, and screenshots into a searchable trail.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-band" id="pricing">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker" style="padding:0;">Pricing</p>
+            <h2>Start with local history, upgrade when teams need sync.</h2>
+          </div>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card">
+            <h3>Free</h3>
+            <p class="price">$0 <small>/ Mac</small></p>
+            <p>Recent clipboard history, search, quick launcher, and local-only storage.</p>
+            <button class="btn secondary" type="button" data-action="download">Download</button>
+          </article>
+          <article class="price-card" style="background:linear-gradient(135deg,var(--accent-soft),var(--raised));">
+            <h3>Pro</h3>
+            <p class="price">TBD <small>/ license</small></p>
+            <p>Unlimited history, smart collections, encrypted favorites sync, and advanced exclusions.</p>
+            <button class="btn primary" type="button" data-action="download">Get Pro</button>
+          </article>
+          <article class="price-card">
+            <h3>Team</h3>
+            <p class="price">Custom <small>/ team</small></p>
+            <p>Shared snippets, managed privacy policy, team collections, and admin controls.</p>
+            <button class="btn secondary" type="button" data-action="download">Contact sales</button>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <a class="brand" href="index.html"><span class="mark">⌘</span><span>ClipX</span></a>
+        <p style="margin:12px 0 0;">Private clipboard history for macOS.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#" data-action="download">Download</a>
+        <a href="#privacy">Privacy policy</a>
+        <a href="#">Updates</a>
+        <a href="#">GitHub</a>
+        <a href="#">Contact</a>
+        <a href="#">Terms</a>
+      </nav>
+    </footer>
+  </div>
+  <script src="js/clipx.js"></script>
+</body>
+</html>

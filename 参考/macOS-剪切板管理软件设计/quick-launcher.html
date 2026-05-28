@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClipX quick launcher</title>
+  <link rel="stylesheet" href="css/clipx.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" class="launcher-page">
+    <section class="launcher-window" aria-label="ClipX quick launcher">
+      <div class="launcher-search">
+        <span data-icon="search"></span>
+        <input class="search-input" data-launcher-input type="search" placeholder="Search clipboard history..." aria-label="Search clipboard history">
+        <span class="hint-cluster" aria-label="Shortcut Command Shift V">
+          <span class="keycap">⌘</span><span class="keycap">⇧</span><span class="keycap">V</span>
+        </span>
+        <a class="icon-btn" href="index.html" aria-label="Back to overview"><span data-icon="back"></span></a>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Switch theme"><span data-theme-icon data-icon="moon"></span></button>
+      </div>
+
+      <div class="result-list" data-launcher-list role="listbox" aria-label="Search results">
+        <button class="result-row is-selected" type="button" data-row data-search="react hook snippet vs code clipboard history">
+          <span class="type-icon code"><span data-icon="code"></span></span>
+          <span class="row-copy">
+            <span class="row-title">useClipboardHistory() with local IndexedDB adapter</span>
+            <span class="row-meta">VS Code <span class="dot"></span> 2 min ago <span class="tag accent">Code</span></span>
+          </span>
+          <span class="hint-cluster"><span class="keycap">↵</span>Paste <span class="keycap">⌘F</span>Favorite</span>
+        </button>
+
+        <button class="result-row" type="button" data-row data-search="human interface guidelines safari link">
+          <span class="type-icon link"><span data-icon="link"></span></span>
+          <span class="row-copy">
+            <span class="row-title">Apple Human Interface Guidelines: Menus and shortcuts</span>
+            <span class="row-meta">Safari <span class="dot"></span> 8 min ago <span class="tag mint">URL</span></span>
+          </span>
+          <span class="hint-cluster"><span class="keycap">↵</span>Open</span>
+        </button>
+
+        <button class="result-row" type="button" data-row data-search="primary focus color figma hex">
+          <span class="type-icon color"><span data-icon="color"></span></span>
+          <span class="row-copy">
+            <span class="row-title">#7AA8FF · Primary focus ring</span>
+            <span class="row-meta">Figma <span class="dot"></span> 14 min ago <span class="tag amber">Color</span></span>
+          </span>
+          <span class="hint-cluster"><span class="keycap">↵</span>Copy HEX</span>
+        </button>
+
+        <button class="result-row" type="button" data-row data-search="image mockup cleanshot crop window">
+          <span class="type-icon image"><span data-icon="image"></span></span>
+          <span class="row-copy">
+            <span class="row-title">Window mockup crop · 1420 × 920</span>
+            <span class="row-meta">CleanShot X <span class="dot"></span> 47 min ago <span class="tag">Image</span></span>
+          </span>
+          <span class="hint-cluster"><span class="keycap">Space</span>Preview</span>
+        </button>
+
+        <button class="result-row" type="button" data-row data-search="file path screenshots finder">
+          <span class="type-icon file"><span data-icon="file"></span></span>
+          <span class="row-copy">
+            <span class="row-title">/Users/brayden/Projects/clipx/screenshots/window-dark.png</span>
+            <span class="row-meta">Finder <span class="dot"></span> 21 min ago <span class="tag">File</span></span>
+          </span>
+          <span class="hint-cluster"><span class="keycap">⌘C</span>Copy path</span>
+        </button>
+
+        <button class="result-row" type="button" data-row data-search="sensitive private password hidden">
+          <span class="type-icon"><span data-icon="lock"></span></span>
+          <span class="row-copy">
+            <span class="row-title sensitive">api-token-••••••••••••••••</span>
+            <span class="row-meta">Safari <span class="dot"></span> 1 hr ago <span class="tag danger">Sensitive</span></span>
+          </span>
+          <span class="hint-cluster"><span class="keycap">⌫</span>Forget</span>
+        </button>
+      </div>
+    </section>
+  </main>
+  <script src="js/clipx.js"></script>
+</body>
+</html>

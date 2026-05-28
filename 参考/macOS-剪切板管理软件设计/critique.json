@@ -1,0 +1,26 @@
+{
+  "kind": "critique-panel",
+  "score": 4.3,
+  "axes": {
+    "philosophy": {
+      "score": 4.5,
+      "notes": "The system matches a native macOS productivity tool: dark-first, restrained glass, precise rows, and privacy-forward settings."
+    },
+    "hierarchy": {
+      "score": 4,
+      "notes": "Each screen has one clear anchor: history list, command search, privacy controls, website product mockup, or component grid."
+    },
+    "execution": {
+      "score": 4,
+      "notes": "Tokens, focus states, motion constraints, icon style, and responsive rules are consistent. Browser visual verification was unavailable because the local browser tool call was cancelled."
+    },
+    "specificity": {
+      "score": 4.5,
+      "notes": "Clipboard item examples, privacy controls, command shortcuts, code snippets, color handling, file paths, and source apps are specific to ClipX."
+    },
+    "restraint": {
+      "score": 4.5,
+      "notes": "Accent use is limited to selected states, focus, primary actions, and a few semantic states. Decorative effects are mostly confined to glass windows and the landing mockup."
+    }
+  }
+}

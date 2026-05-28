@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClipX prototype overview</title>
+  <link rel="stylesheet" href="css/clipx.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div class="page">
+    <header class="shell-topbar">
+      <a class="brand" href="index.html" aria-label="ClipX home">
+        <span class="mark">⌘</span>
+        <span>ClipX</span>
+      </a>
+      <nav class="nav-actions" aria-label="Prototype navigation">
+        <a class="nav-link" href="app-main.html">Main window</a>
+        <a class="nav-link" href="quick-launcher.html">Quick launcher</a>
+        <a class="nav-link" href="settings.html">Settings</a>
+        <a class="nav-link" href="landing.html">Landing</a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <span data-theme-icon data-icon="moon"></span>
+          <span data-theme-label>Dark</span>
+        </button>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero" style="min-height: 560px; padding-top: 64px;">
+        <div>
+          <p class="section-kicker" style="padding:0;">Native macOS clipboard manager</p>
+          <h1 class="hero-title">A restrained product system for high-frequency copy and paste.</h1>
+          <p class="hero-copy">
+            ClipX keeps text, links, images, code, colors, and file paths searchable without turning a productivity tool into a noisy dashboard.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="app-main.html"><span data-icon="clipboard"></span>Main window</a>
+            <a class="btn secondary" href="landing.html"><span data-icon="arrow"></span>Website visual</a>
+          </div>
+          <div class="hero-points">
+            <div class="hero-point">
+              <strong>Dark first</strong>
+              <span>Low-glare slate canvas with glass panels.</span>
+            </div>
+            <div class="hero-point">
+              <strong>Keyboard led</strong>
+              <span>Command palette behavior and visible key hints.</span>
+            </div>
+            <div class="hero-point">
+              <strong>Local trust</strong>
+              <span>Privacy settings surfaced as app controls.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-mockup" aria-label="ClipX product preview">
+          <div class="product-mockup">
+            <div class="mac-titlebar">
+              <span class="traffic"><i></i><i></i><i></i></span>
+              <span class="window-title">ClipX History</span>
+            </div>
+            <div class="mockup-body">
+              <div class="mock-side">
+                <div class="mock-pill"></div>
+                <div class="mock-pill"></div>
+                <div class="mock-pill"></div>
+                <div class="mock-pill" style="background: var(--accent-soft);"></div>
+              </div>
+              <div class="mock-list">
+                <div class="mock-row active"></div>
+                <div class="mock-row"></div>
+                <div class="mock-row"></div>
+                <div class="mock-row"></div>
+              </div>
+              <div class="mock-detail">
+                <div class="mock-line" style="width:70%;"></div>
+                <div class="mock-line"></div>
+                <div class="mock-line" style="width:84%;"></div>
+                <div class="image-thumb" style="margin-top:18px;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="floating-card code">
+            <strong>Code snippet</strong>
+            <pre class="code-block" style="margin-top:8px; padding:10px;">const copy = await history.latest()</pre>
+          </div>
+          <div class="floating-card color">
+            <strong>#7AA8FF</strong>
+            <div class="color-strip"></div>
+          </div>
+          <div class="floating-card link">
+            <strong>docs.apple.com</strong>
+            <p class="muted" style="margin:6px 0 0;">Copied 2 min ago from Safari</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-band" style="padding-top: 18px;">
+        <div class="section-head">
+          <div>
+            <p class="section-kicker" style="padding:0;">Prototype files</p>
+            <h2>Each surface is its own screen.</h2>
+          </div>
+          <p>Open the screens below to inspect the product app, the command surface, settings, marketing page, and component library.</p>
+        </div>
+        <div class="screen-grid">
+          <a class="screen-card" href="app-main.html">
+            <span class="card-icon"><span data-icon="clipboard"></span></span>
+            <div>
+              <h3>Main window</h3>
+              <p>Sidebar, searchable history list, details panel, actions, code and color handling.</p>
+            </div>
+          </a>
+          <a class="screen-card" href="quick-launcher.html">
+            <span class="card-icon"><span data-icon="search"></span></span>
+            <div>
+              <h3>Quick launcher</h3>
+              <p>Spotlight-style command window with live filtering and keyboard selection.</p>
+            </div>
+          </a>
+          <a class="screen-card" href="settings.html">
+            <span class="card-icon"><span data-icon="settings"></span></span>
+            <div>
+              <h3>Settings</h3>
+              <p>macOS preference layout with privacy-first storage and sync controls.</p>
+            </div>
+          </a>
+          <a class="screen-card" href="landing.html">
+            <span class="card-icon"><span data-icon="arrow"></span></span>
+            <div>
+              <h3>Landing page</h3>
+              <p>1440px marketing homepage with product mockup, features, privacy, and pricing.</p>
+            </div>
+          </a>
+          <a class="screen-card" href="components.html">
+            <span class="card-icon"><span data-icon="check"></span></span>
+            <div>
+              <h3>Components</h3>
+              <p>Buttons, tags, rows, switches, keycaps, toast, empty state, and context menu.</p>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="js/clipx.js"></script>
+</body>
+</html>

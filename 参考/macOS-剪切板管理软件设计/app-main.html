@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ClipX main window</title>
+  <link rel="stylesheet" href="css/clipx.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <main id="main-content" class="app-page">
+    <section class="mac-window" aria-label="ClipX main app window">
+      <div class="mac-titlebar">
+        <span class="traffic" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span class="mini-brand"><span class="mark" style="width:28px;height:28px;border-radius:9px;">⌘</span>ClipX</span>
+        <span class="window-title">Clipboard history</span>
+        <span class="titlebar-spacer"></span>
+        <a class="icon-btn" href="index.html" aria-label="Back to overview"><span data-icon="back"></span></a>
+        <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch theme">
+          <span data-theme-icon data-icon="moon"></span>
+          <span data-theme-label>Dark</span>
+        </button>
+      </div>
+
+      <div class="workspace">
+        <aside class="sidebar" aria-label="Clipboard categories">
+          <p class="sidebar-label">Library</p>
+          <button class="sidebar-item active" type="button"><span data-icon="clipboard"></span>All items <span class="count">128</span></button>
+          <button class="sidebar-item" type="button"><span data-icon="text"></span>Text <span class="count">42</span></button>
+          <button class="sidebar-item" type="button"><span data-icon="link"></span>Links <span class="count">31</span></button>
+          <button class="sidebar-item" type="button"><span data-icon="image"></span>Images <span class="count">12</span></button>
+          <button class="sidebar-item" type="button"><span data-icon="code"></span>Code <span class="count">18</span></button>
+          <button class="sidebar-item" type="button"><span data-icon="color"></span>Colors <span class="count">9</span></button>
+          <button class="sidebar-item" type="button"><span data-icon="file"></span>Files <span class="count">16</span></button>
+
+          <div class="sidebar-section">
+            <p class="sidebar-label">Smart collections</p>
+            <button class="sidebar-item" type="button"><span data-icon="star"></span>Favorites <span class="count">14</span></button>
+            <button class="sidebar-item" type="button"><span data-icon="pin"></span>Pinned snippets <span class="count">7</span></button>
+            <button class="sidebar-item" type="button"><span data-icon="lock"></span>Sensitive hidden <span class="count">3</span></button>
+          </div>
+
+          <div class="sidebar-section">
+            <p class="sidebar-label">App</p>
+            <a class="sidebar-item" href="settings.html"><span data-icon="settings"></span>Settings</a>
+          </div>
+        </aside>
+
+        <section class="main-column" aria-label="Clipboard history list">
+          <div class="history-header">
+            <div class="header-line">
+              <div>
+                <h1 class="screen-title">All items</h1>
+                <p class="muted small" style="margin:5px 0 0;">Local history, ordered by most recent copy.</p>
+              </div>
+              <div class="hint-cluster"><span class="keycap">⌘</span><span class="keycap">⇧</span><span class="keycap">V</span></div>
+            </div>
+            <label class="searchbar">
+              <span data-icon="search"></span>
+              <input class="search-input" data-filter-input="clipboard" type="search" placeholder="Search clipboard history..." aria-label="Search clipboard history">
+            </label>
+          </div>
+
+          <div class="history-list" role="list" aria-label="Clipboard items">
+            <div class="clipboard-row is-selected" role="button" tabindex="0" data-row data-filter-item="clipboard" data-search="react hook clipboard code vs code useclipboard command palette">
+              <span class="type-icon code"><span data-icon="code"></span></span>
+              <span class="row-copy">
+                <span class="row-title">useClipboardHistory() with local IndexedDB adapter</span>
+                <span class="row-meta">VS Code <span class="dot"></span> 2 min ago <span class="tag accent">Code</span></span>
+              </span>
+              <span class="row-actions">
+                <button class="icon-btn small" type="button" data-action="favorite" aria-label="Favorite item"><span data-icon="star"></span></button>
+                <button class="icon-btn small" type="button" data-action="copy" data-copy="useClipboardHistory" aria-label="Copy again"><span data-icon="copy"></span></button>
+                <span class="context-wrap">
+                  <button class="icon-btn small" type="button" data-action="menu" aria-label="More actions"><span data-icon="more"></span></button>
+                  <span class="context-menu" hidden>
+                    <button class="menu-item" type="button" data-action="pin"><span data-icon="pin"></span>Pin item</button>
+                    <button class="menu-item" type="button" data-action="copy"><span data-icon="copy"></span>Copy again</button>
+                    <button class="menu-item" type="button" data-action="delete"><span data-icon="trash"></span>Delete</button>
+                  </span>
+                </span>
+              </span>
+            </div>
+
+            <div class="clipboard-row" role="button" tabindex="0" data-row data-filter-item="clipboard" data-search="apple developer human interface guidelines safari link">
+              <span class="type-icon link"><span data-icon="link"></span></span>
+              <span class="row-copy">
+                <span class="row-title">Apple Human Interface Guidelines: Menus and shortcuts</span>
+                <span class="row-meta">Safari <span class="dot"></span> 8 min ago <span class="tag mint">URL</span></span>
+              </span>
+              <span class="row-actions">
+                <button class="icon-btn small" type="button" data-action="favorite" aria-label="Favorite item"><span data-icon="star"></span></button>
+                <button class="icon-btn small" type="button" data-action="copy" data-copy="https://developer.apple.com/design/human-interface-guidelines/" aria-label="Copy again"><span data-icon="copy"></span></button>
+              </span>
+            </div>
+
+            <div class="clipboard-row" role="button" tabindex="0" data-row data-filter-item="clipboard" data-search="figma design token accent color hex">
+              <span class="type-icon color"><span data-icon="color"></span></span>
+              <span class="row-copy">
+                <span class="row-title">#7AA8FF · Primary focus ring</span>
+                <span class="row-meta">Figma <span class="dot"></span> 14 min ago <span class="tag amber">Color</span></span>
+              </span>
+              <span class="row-actions">
+                <span class="color-chip" style="width:28px;height:28px;background:#7AA8FF;"></span>
+                <button class="icon-btn small" type="button" data-action="copy" data-copy="#7AA8FF" aria-label="Copy color value"><span data-icon="copy"></span></button>
+              </span>
+            </div>
+
+            <div class="clipboard-row" role="button" tabindex="0" data-row data-filter-item="clipboard" data-search="finder file path screenshots directory">
+              <span class="type-icon file"><span data-icon="file"></span></span>
+              <span class="row-copy">
+                <span class="row-title">/Users/brayden/Projects/clipx/screenshots/window-dark.png</span>
+                <span class="row-meta">Finder <span class="dot"></span> 21 min ago <span class="tag">File</span></span>
+              </span>
+              <span class="row-actions">
+                <button class="icon-btn small" type="button" data-action="pin" aria-label="Pin item"><span data-icon="pin"></span></button>
+                <button class="icon-btn small" type="button" data-action="copy" data-copy="/Users/brayden/Projects/clipx/screenshots/window-dark.png" aria-label="Copy path"><span data-icon="copy"></span></button>
+              </span>
+            </div>
+
+            <div class="clipboard-row" role="button" tabindex="0" data-row data-filter-item="clipboard" data-search="notion release notes private clipboard text">
+              <span class="type-icon text"><span data-icon="text"></span></span>
+              <span class="row-copy">
+                <span class="row-title">Release note: private clipboard history stays on this Mac by default.</span>
+                <span class="row-meta">Notion <span class="dot"></span> 34 min ago <span class="tag">Text</span></span>
+              </span>
+              <span class="row-actions">
+                <button class="icon-btn small" type="button" data-action="favorite" aria-label="Favorite item"><span data-icon="star"></span></button>
+                <button class="icon-btn small" type="button" data-action="copy" aria-label="Copy again"><span data-icon="copy"></span></button>
+              </span>
+            </div>
+
+            <div class="clipboard-row" role="button" tabindex="0" data-row data-filter-item="clipboard" data-search="image thumbnail presentation paste">
+              <span class="type-icon image"><span data-icon="image"></span></span>
+              <span class="row-copy">
+                <span class="row-title">Window mockup crop · 1420 × 920</span>
+                <span class="row-meta">CleanShot X <span class="dot"></span> 47 min ago <span class="tag">Image</span></span>
+              </span>
+              <span class="row-actions">
+                <button class="icon-btn small" type="button" data-action="copy" aria-label="Copy image again"><span data-icon="copy"></span></button>
+              </span>
+            </div>
+
+            <div class="clipboard-row" role="button" tabindex="0" data-row data-filter-item="clipboard" data-search="password sensitive hidden safari private">
+              <span class="type-icon"><span data-icon="lock"></span></span>
+              <span class="row-copy">
+                <span class="row-title sensitive">sk-live-••••••••••••••••••••</span>
+                <span class="row-meta">Safari <span class="dot"></span> 1 hr ago <span class="tag danger">Sensitive</span></span>
+              </span>
+              <span class="row-actions">
+                <button class="icon-btn small" type="button" data-action="delete" aria-label="Delete sensitive item"><span data-icon="trash"></span></button>
+              </span>
+            </div>
+
+            <div class="empty-state" data-empty-for="clipboard" hidden>
+              <div>
+                <span class="type-icon" style="margin:0 auto 12px;"><span data-icon="search"></span></span>
+                <p style="margin:0;font-weight:650;color:var(--fg-soft);">No matching clipboard items</p>
+                <p style="margin:4px 0 0;">Try searching by app, type, tag, or copied text.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <aside class="detail-panel" aria-label="Selected clipboard item preview">
+          <div class="detail-scroll">
+            <div class="detail-title">
+              <div>
+                <p class="section-kicker" style="padding:0;">Selected item</p>
+                <h2 style="font-size:24px;">React hook snippet</h2>
+              </div>
+              <span class="tag accent">Code</span>
+            </div>
+
+            <div class="preview-card">
+              <pre class="code-block"><span class="kw">export function</span> <span class="fn">useClipboardHistory</span>() {
+  <span class="kw">const</span> [items, setItems] = useState([]);
+
+  <span class="kw">async function</span> <span class="fn">copyAgain</span>(item) {
+    <span class="kw">await</span> navigator.clipboard.writeText(item.text);
+    toast(<span class="str">"Copied again"</span>);
+  }
+
+  <span class="kw">return</span> { items, copyAgain };
+}</pre>
+            </div>
+
+            <div class="detail-grid">
+              <div class="meta-pair"><span>Source app</span><strong>VS Code</strong></div>
+              <div class="meta-pair"><span>Copied</span><strong>Today, 14:28</strong></div>
+              <div class="meta-pair"><span>Storage</span><strong>Local encrypted database</strong></div>
+              <div class="meta-pair"><span>Tags</span><strong>React, Hook, Clipboard</strong></div>
+            </div>
+
+            <div class="preview-card" style="margin-top:16px;">
+              <h3 style="margin:0 0 8px;">Recognition</h3>
+              <p class="muted" style="margin:0;">ClipX detected JavaScript syntax, preserved indentation, and excluded no sensitive fields for this item.</p>
+            </div>
+          </div>
+
+          <div class="detail-actions">
+            <button class="btn primary" type="button" data-action="paste"><span data-icon="paste"></span>Paste</button>
+            <button class="btn secondary" type="button" data-action="copy"><span data-icon="copy"></span>Copy again</button>
+            <button class="btn secondary" type="button" data-action="pin"><span data-icon="pin"></span>Pin</button>
+            <button class="btn secondary" type="button" data-action="favorite"><span data-icon="star"></span>Favorite</button>
+            <button class="btn secondary" type="button"><span data-icon="plus"></span>Add tag</button>
+            <button class="btn danger" type="button" data-action="delete"><span data-icon="trash"></span>Delete</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <script src="js/clipx.js"></script>
+</body>
+</html>
