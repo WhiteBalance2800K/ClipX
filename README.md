@@ -1,5 +1,9 @@
 # ClipX
 
+## English
+
+English README: [README.en.md](README.en.md)
+
 ClipX 是一个 Swift 写的 macOS 剪切板管理器。它重点解决一个很烦的问题：从 iPhone 照片、实况文本或 Universal Clipboard 复制文字到 Mac 时，内容有时会变成 RTFD/富文本包，导致 Raycast、VS Code、浏览器输入框等应用无法像普通文字一样粘贴。
 
 ClipX 会监听系统剪切板，识别这类 Universal Clipboard RTFD 内容，保留原始记录，同时自动把可读文字写回为普通文本，让 Mac 端粘贴恢复正常。
@@ -41,6 +45,4 @@ dist/ClipX.app
 
 自动粘贴需要 macOS 辅助功能权限。未授权时，ClipX 仍可以把选中历史写入系统剪切板。
 
-## English
 
-English README: [README.en.md](README.en.md)
