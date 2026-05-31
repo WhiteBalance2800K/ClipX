@@ -165,8 +165,6 @@ struct SettingsView: View {
     @AppStorage("autoDeleteHistory") private var autoDeleteHistory = true
     @AppStorage("languageCode") private var languageCode = ClipXAppearance.selectedLanguageCode
     @AppStorage("appTheme") private var appTheme = ClipXTheme.dark.rawValue
-    @AppStorage("pureBlackGlass") private var pureBlackGlass = true
-    @AppStorage("reduceTransparency") private var reduceTransparency = false
     @AppStorage("showDebugStatus") private var showDebugStatus = false
 
     var body: some View {
@@ -261,18 +259,6 @@ struct SettingsView: View {
                         }
                     )
                 )
-                SettingsToggleRow(title: L10n.t("Pure black glass"), subtitle: L10n.t("Use black translucent surfaces instead of colored gradients."), isOn: $pureBlackGlass)
-                    .onChange(of: pureBlackGlass) { _, value in
-                        ClipXAppearance.pureBlackGlass = value
-                        model.refreshPresentation()
-                        ClipXAppearance.notifyAppearanceChanged()
-                    }
-                SettingsToggleRow(title: L10n.t("Reduce transparency"), subtitle: L10n.t("Prefer more solid surfaces when the background is distracting."), isOn: $reduceTransparency)
-                    .onChange(of: reduceTransparency) { _, value in
-                        ClipXAppearance.reduceTransparency = value
-                        model.refreshPresentation()
-                        ClipXAppearance.notifyAppearanceChanged()
-                    }
             }
         case .privacy:
             SettingsCard {
@@ -353,75 +339,37 @@ private struct ToolbarIconSurface: View {
 
 private struct FilterMenuButton: View {
     @EnvironmentObject private var model: ClipXViewModel
-    @State private var showingFilters = false
 
     private let filters: [ClipKind?] = [nil, .text, .url, .image, .file, .color]
 
     var body: some View {
-        Button {
-            showingFilters.toggle()
+        Menu {
+            ForEach(filters.indices, id: \.self) { index in
+                let kind = filters[index]
+                let selected = model.selectedCategory == kind
+                Button {
+                    model.selectCategory(kind)
+                } label: {
+                    Label(
+                        kind?.displayName ?? L10n.t("All items"),
+                        systemImage: selected ? "checkmark" : filterIcon(for: kind)
+                    )
+                }
+            }
         } label: {
             ToolbarIconSurface(
                 systemName: "line.3.horizontal.decrease",
                 active: model.selectedCategory != nil
             )
         }
+        .menuStyle(.button)
         .buttonStyle(.plain)
-        .popover(isPresented: $showingFilters, arrowEdge: .bottom) {
-            filterPopover
-                .preferredColorScheme(ClipXAppearance.isDarkMode ? .dark : .light)
-                .presentationBackground(ClipXColor.panel)
-        }
         .help(L10n.t("Filter"))
-    }
-
-    private var filterPopover: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            ForEach(filters.indices, id: \.self) { index in
-                let kind = filters[index]
-                let selected = model.selectedCategory == kind
-                Button {
-                    model.selectCategory(kind)
-                    showingFilters = false
-                } label: {
-                    HStack(spacing: 10) {
-                        Image(systemName: filterIcon(for: kind))
-                            .font(.system(size: 13, weight: .semibold))
-                            .frame(width: 18)
-                        Text(kind?.displayName ?? L10n.t("All items"))
-                            .font(.system(size: 13, weight: .semibold))
-                        Spacer()
-                        if selected {
-                            Image(systemName: "checkmark")
-                                .font(.system(size: 11, weight: .bold))
-                        }
-                    }
-                }
-                .buttonStyle(FilterPopoverRowStyle(active: selected))
-            }
-        }
-        .padding(8)
-        .frame(width: 220)
-        .background(ClipXColor.panel.ignoresSafeArea())
     }
 
     private func filterIcon(for kind: ClipKind?) -> String {
         guard let kind else { return "doc.on.clipboard" }
         return icon(for: kind)
-    }
-}
-
-private struct FilterPopoverRowStyle: ButtonStyle {
-    var active = false
-
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .foregroundStyle(active ? ClipXColor.text : ClipXColor.textSoft)
-            .padding(.horizontal, 10)
-            .frame(maxWidth: .infinity, minHeight: 38, alignment: .leading)
-            .background(active || configuration.isPressed ? ClipXColor.selection : Color.clear)
-            .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-            .contentShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
     }
 }
 
@@ -1298,25 +1246,34 @@ private struct SettingsPickerRow: View {
                     .foregroundStyle(ClipXColor.text)
             }
             Spacer()
-            SettingsPopoverPicker(selection: $selection, options: options)
+            SettingsMenuPicker(selection: $selection, options: options)
         }
         .padding(16)
         .overlay(Rectangle().fill(ClipXColor.separator).frame(height: 1), alignment: .bottom)
     }
 }
 
-private struct SettingsPopoverPicker: View {
+private struct SettingsMenuPicker: View {
     @Binding var selection: String
     let options: [(String, String)]
-    @State private var showingOptions = false
 
     private var selectedLabel: String {
         options.first { $0.0 == selection }?.1 ?? selection
     }
 
     var body: some View {
-        Button {
-            showingOptions.toggle()
+        Menu {
+            ForEach(options, id: \.0) { value, label in
+                Button {
+                    selection = value
+                } label: {
+                    if selection == value {
+                        Label(label, systemImage: "checkmark")
+                    } else {
+                        Text(label)
+                    }
+                }
+            }
         } label: {
             HStack(spacing: 8) {
                 Text(selectedLabel)
@@ -1338,35 +1295,9 @@ private struct SettingsPopoverPicker: View {
                     .stroke(settingsControlBorder, lineWidth: 0.8)
             )
         }
+        .menuStyle(.button)
         .buttonStyle(.plain)
         .contentShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
-        .popover(isPresented: $showingOptions, arrowEdge: .bottom) {
-            VStack(alignment: .leading, spacing: 4) {
-                ForEach(options, id: \.0) { value, label in
-                    let active = selection == value
-                    Button {
-                        selection = value
-                        showingOptions = false
-                    } label: {
-                        HStack(spacing: 10) {
-                            Text(label)
-                                .font(.system(size: 13, weight: .semibold))
-                            Spacer()
-                            if active {
-                                Image(systemName: "checkmark")
-                                    .font(.system(size: 11, weight: .bold))
-                            }
-                        }
-                    }
-                    .buttonStyle(FilterPopoverRowStyle(active: active))
-                }
-            }
-            .padding(8)
-            .frame(width: settingsControlWidth)
-            .background(ClipXColor.panel.ignoresSafeArea())
-            .preferredColorScheme(ClipXAppearance.isDarkMode ? .dark : .light)
-            .presentationBackground(ClipXColor.panel)
-        }
     }
 
     private var settingsControlBackground: Color {

@@ -51,20 +51,9 @@ enum ClipXAppearance {
         set { UserDefaults.standard.set(newValue.rawValue, forKey: "appTheme") }
     }
 
-    static var pureBlackGlass: Bool {
-        get {
-            if UserDefaults.standard.object(forKey: "pureBlackGlass") == nil {
-                return true
-            }
-            return UserDefaults.standard.bool(forKey: "pureBlackGlass")
-        }
-        set { UserDefaults.standard.set(newValue, forKey: "pureBlackGlass") }
-    }
+    static var pureBlackGlass: Bool { true }
 
-    static var reduceTransparency: Bool {
-        get { UserDefaults.standard.bool(forKey: "reduceTransparency") }
-        set { UserDefaults.standard.set(newValue, forKey: "reduceTransparency") }
-    }
+    static var reduceTransparency: Bool { false }
 
     static var selectedLanguageCode: String {
         get { UserDefaults.standard.string(forKey: "languageCode") ?? "system" }
